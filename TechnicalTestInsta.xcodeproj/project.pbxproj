@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A4E86832DB0099A00816968 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4E86822DB0099A00816968 /* Kingfisher */; };
-		3A4E86852DB00AC800816968 /* readmy.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E86842DB00AC300816968 /* readmy.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +31,6 @@
 		3A4E86472DAFFED100816968 /* TechnicalTestInsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechnicalTestInsta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4E86562DAFFED300816968 /* TechnicalTestInstaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalTestInstaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4E86602DAFFED300816968 /* TechnicalTestInstaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalTestInstaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A4E86842DB00AC300816968 /* readmy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readmy.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -82,7 +80,6 @@
 		3A4E863E2DAFFED100816968 = {
 			isa = PBXGroup;
 			children = (
-				3A4E86842DB00AC300816968 /* readmy.md */,
 				3A4E86492DAFFED100816968 /* TechnicalTestInsta */,
 				3A4E86592DAFFED300816968 /* TechnicalTestInstaTests */,
 				3A4E86632DAFFED300816968 /* TechnicalTestInstaUITests */,
@@ -224,7 +221,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4E86852DB00AC800816968 /* readmy.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
