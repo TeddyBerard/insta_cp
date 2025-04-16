@@ -109,8 +109,18 @@ struct StoryModalView: View {
                         
                         HStack(spacing: 20) {
                             TextField("Send message", text: .constant(""))
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.white.opacity(0.5), lineWidth: 1)
+                                )
                                 .foregroundColor(.white)
+                                .accentColor(.white)
+                                .placeholder(when: true) {
+                                    Text("Send message").foregroundColor(.white.opacity(0.7))
+                                        .padding(.leading, 16)
+                                }
                             
                             Button {
                                 viewModel.likePicture()
