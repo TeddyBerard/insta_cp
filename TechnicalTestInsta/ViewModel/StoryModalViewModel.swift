@@ -145,6 +145,19 @@ class StoryModalViewModel: ObservableObject {
         }
     }
     
+    func isLikedPicture() -> Bool {
+        return currentStory.likedIndexPictures.contains(currentStory.watchedIndex)
+    }
+    
+    func likePicture() {
+        if currentStory.likedIndexPictures.contains(currentStory.watchedIndex) {
+            currentStory.likedIndexPictures.removeAll(where: { $0 == currentStory.watchedIndex })
+        } else {
+            currentStory.likedIndexPictures.append(currentStory.watchedIndex)
+        }
+        
+    }
+    
     deinit {
         timer?.invalidate()
     }

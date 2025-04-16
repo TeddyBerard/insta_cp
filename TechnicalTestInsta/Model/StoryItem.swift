@@ -20,6 +20,7 @@ final class StoryItem {
     var pictureURLs: [StoryURL]
     var hasUnseenStory: Bool
     var watchedIndex: Int
+    var likedIndexPictures: [Int]
     
     init(id: Int, name: String, profilePictureURL: String, pictureURLs: [StoryURL], hasUnseenStory: Bool = true) {
         self.id = id
@@ -28,6 +29,7 @@ final class StoryItem {
         self.pictureURLs = pictureURLs
         self.hasUnseenStory = hasUnseenStory
         self.watchedIndex = 0
+        self.likedIndexPictures = []
     }
     
     func isEqual(_ object: Any?) -> Bool {

@@ -42,6 +42,34 @@ struct StoryModalView: View {
                     Spacer()
                 }
                 
+                HStack(spacing: 0) {
+                    Rectangle()
+                        .fill(.black.opacity(0.01))
+                        .onTapGesture {
+                            viewModel.moveToPreviousStoryImage()
+                        }
+                    
+                    Rectangle()
+                        .fill(.black.opacity(0.01))
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { _ in
+                                    viewModel.isLongPressed = true
+                                    viewModel.pauseProgress()
+                                }
+                                .onEnded { _ in
+                                    viewModel.isLongPressed = false
+                                    viewModel.resumeProgress()
+                                }
+                        )
+                    
+                    Rectangle()
+                        .fill(.black.opacity(0.01))
+                        .onTapGesture {
+                            viewModel.moveToNextStoryImage()
+                        }
+                }
+                
                 if !viewModel.isLongPressed {
                     VStack(spacing: 8) {
                         HStack(spacing: 4) {
@@ -85,10 +113,10 @@ struct StoryModalView: View {
                                 .foregroundColor(.white)
                             
                             Button {
-                                
+                                viewModel.likePicture()
                             } label: {
                                 Image(systemName: "heart")
-                                    .foregroundColor(.white)
+                                    .foregroundColor(viewModel.isLikedPicture() ? .red : .white)
                                     .font(.system(size: 24))
                             }
                             
@@ -103,34 +131,6 @@ struct StoryModalView: View {
                         .padding(.horizontal)
                         .padding(.bottom, 8)
                     }
-                }
-                
-                HStack(spacing: 0) {
-                    Rectangle()
-                        .fill(.black.opacity(0.01))
-                        .onTapGesture {
-                            viewModel.moveToPreviousStoryImage()
-                        }
-                    
-                    Rectangle()
-                        .fill(.black.opacity(0.01))
-                        .gesture(
-                            DragGesture(minimumDistance: 0)
-                                .onChanged { _ in
-                                    viewModel.isLongPressed = true
-                                    viewModel.pauseProgress()
-                                }
-                                .onEnded { _ in
-                                    viewModel.isLongPressed = false
-                                    viewModel.resumeProgress()
-                                }
-                        )
-                    
-                    Rectangle()
-                        .fill(.black.opacity(0.01))
-                        .onTapGesture {
-                            viewModel.moveToNextStoryImage()
-                        }
                 }
             }
             .frame(maxHeight: .infinity)
